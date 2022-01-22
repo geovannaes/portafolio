@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+
+<title>encriptador de texto</title>
+<h1 align="center"><i><font color="white">Bienvenid@ al encriptador de texto</font></i></h1>
+<body background="https://images.pexels.com/photos/956999/milky-way-starry-sky-night-sky-star-956999.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940">
+<h2 align="center"><b><font color="white">Para recordar:</font></b></h2>
+<h3 align="center"><b><font color="white">Solo puedes usar letras minusculas no debes usar tildes ni otros caracteres especiales.</font></b></h3>
+
+ <section class="espacios">
+        <div class="encriptar" align="center">
+            <label for="input-texto"><h2><font color="white">Vamos a codificar tu texto</h2></font></label>
+            <textarea id="texto" name="textarea" rows="10" cols="50" onchange="this.value=this.value.toLowerCase();" placeholder="ingresa aqui el texto que deseas encriptar o desencriptar"></textarea>
+            <br><br>
+            <button class="encriptar" onclick="botonEncriptar()" style="border:  rgb(128,128,128) 3px solid; background-color: lightblue"><i><b>Encriptar</i></b></button>
+            <button class="desencriptar" onclick="botonDesencriptar()" style="border: rgb(128,128,128) 3px solid; background-color: lightblue"><i><b>Desencriptar</i></b></button>
+        </div>
+
+        <div class="desencriptar" align="center">
+            <label for="output-texto"><h2><font color="white">Este es tu texto procesado</h2></font></label>
+            <textarea id="resultado" name="textarea" rows="10" cols="50" onchange="this.value=this.value.toLowerCase();" placeholder="lee y copia tu texto"></textarea>
+            <br><br>
+            <button  class="copiar" onclick="botonCopiar()" style="border: rgb(128,128,128) 3px solid ; background-color: lightblue" ><i><b>copiar</i></b></button>
+            
+
+        </div>
+    
+        
+    </section>
+    <script>
+   
+		function botonEncriptar(){
+		        const encriptar = document.getElementById('texto').value;
+		        const encriptado = encriptar.replace(/e/gi, 'enter').replace(/i/gi, 'imes').replace(/a/gi, 'ai').replace(/o/gi, 'ober').replace(/u/gi, 'ufat');
+		        document.getElementById("resultado").value = encriptado
+		        document.getElementById("texto").value=" ";
+		}
+
+
+		function botonDesencriptar(){
+		        const desencriptar= document.getElementById ("texto").value;
+		        const desencriptado= desencriptar.replace(/ai/gi, 'a').replace(/enter/gi, 'e').replace(/imes/gi, 'i').replace(/ober/gi, 'o').replace(/ufat/gi, 'u');
+		        document.getElementById("resultado").value = desencriptado
+		        document.getElementById("texto").value=" ";
+		}
+
+		 function botonCopiar(){
+			    const copyText = document.getElementById("resultado");
+			    copyText.select();
+			    document.execCommand("Copy");
+			    document.getElementById("resultado").value=" ";
+}
+
+     </script>
+</body>
+
+    <footer class="derechos">
+        <p><i><font color="white"> Derechos reservados por: GESS enero 2022 </i></font></p>
+    </footer>
+
+    
